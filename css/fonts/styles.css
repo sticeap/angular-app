@@ -1,0 +1,15 @@
+@font-face {
+	font-family: 'Notethis';
+	src: url('Notethis.eot?') format('eot'), 
+	     url('Notethis.woff') format('woff'), 
+	     url('Notethis.ttf')  format('truetype'),
+	     url('Notethis.svg#Notethis') format('svg');
+}
+
+@font-face {
+	font-family: 'TodayIFeel';
+	src: url('TodayIFeel.eot?') format('eot'), 
+	     url('TodayIFeel.woff') format('woff'), 
+	     url('TodayIFeel.ttf')  format('truetype'),
+	     url('TodayIFeel.svg#TodayIFeel') format('svg');
+}
