@@ -27,7 +27,7 @@ app.controller('HomeCtrl', ['$scope', '$window', '$timeout', 'socket', function(
 			console.log(response);
 			$scope.contacts = JSON.parse(response.response)
 		})
-		.on('getSms', function(response){
+		.on('receiveSms', function(response){
 			console.log(response);
 		})
 
@@ -82,12 +82,12 @@ app.controller('HomeCtrl', ['$scope', '$window', '$timeout', 'socket', function(
 	$scope.notify = function(){
 		var havePermission = $window.webkitNotifications.checkPermission();
 		$scope.notifiedTime = $scope.getTime();
-		//$scope.$apply();
+
 		if (havePermission == 0) {
 			// 0 is PERMISSION_ALLOWED
 			var notification = $window.webkitNotifications.createNotification(
 				'img/mail-icon.png',
-				'Chrome notification!',
+				'New SMS!',
 				"Here is the notification text \n\r sdfsadf s \n sdfsfsdfsd");
 
 			notification.onclick = function (){
