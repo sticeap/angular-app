@@ -2,7 +2,7 @@
 
 /* App Module */
 
-var app = angular.module('app', ['appFilters', 'appServices']).
+var app = angular.module('app', ['appFilters', 'appServices', 'appDirectives']).
   config(['$routeProvider', function($routeProvider) {
   $routeProvider.
 	when('/phones', {
@@ -18,7 +18,8 @@ var app = angular.module('app', ['appFilters', 'appServices']).
 		controller : 'HomeCtrl'
 	}).
 	when('/about', {
-		templateUrl: 'views/about.html'
+		templateUrl: 'views/about.html',
+		controller : 'HomeCtrl'
 	}).
 	otherwise({
 		redirectTo: '/home'

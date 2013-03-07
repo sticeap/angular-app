@@ -1,25 +1,128 @@
 
 @import url("fonts/styles.css");
 
-body{
-	background: #000;
-	overflow: hidden;
-	
-	.bokeh {
-		position: absolute;
-		z-index: -1;
-	}
+/* variable */
+$widthContent: 900px;
 
+
+body{
+	background: #474264;
+	
 	#website{
-		margin: 0 auto;
-		padding: 20px;
-		position: relative;
-		width: 900px;
+		width: 100%;
+
+		#header {
+			.content-wrapper{
+				position: relative;
+				width: $widthContent;
+				margin:0 auto;
+				margin-top: 60px;
+
+				.flexslider{
+					width: $widthContent - 8;
+					margin: 0 auto;
+					overflow: hidden;
+
+					.flex-control-nav{
+						z-index: 2;
+						bottom: 0px;
+					}
+				}
+
+				.header-bar{
+					background: #eb593c;
+					position: fixed;
+					height: 50px;
+					width:100%;
+					left:0px;
+					top: 0px;
+					box-shadow: 0px 0px 5px;
+					z-index: 999;
+
+					.content-wrap{
+						width: $widthContent;
+						margin: 0 auto;
+
+						ul.menu{
+							list-style: none;
+							height: 100%;
+
+							li{
+								display: inline-block;
+								height: 100%;
+								a{
+									display: inline-block;
+									padding: 0px 25px;
+									line-height: 50px;
+									color: #fff;
+									font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+									&:hover{
+										background-color: rgba(0, 0, 0, 0.1);
+										text-decoration: none;
+										color: #fff;
+									}
+								}
+								&.search > .form-search{
+									margin-top: 10px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		#content {
+			.content-wrapper{
+				position: relative;
+				width: $widthContent;
+				margin:0 auto;
+				margin-top: 20px;
+
+			}
+		}
+
+		#footer {
+			/*background: rgba(95,72,99, 0.1);*/
+			background: rgba(0, 0,0, 0.1);
+			box-shadow: 0px 0px 5px;
+
+			.content-wrapper{
+				position: relative;
+				width: $widthContent;
+				margin:0 auto;
+				min-height: 100px;
+
+				.footer-col{
+					width: 200px;
+					float:left;
+					padding-top: 10px;
+					margin-left: 80px;
+
+					ul{
+						li{
+							a{
+
+								&:hover{
+									background: none;
+								}
+							}
+							&.title{
+								font-size: 16px;
+								padding-bottom: 5px;
+								color: #333333;
+							}
+						}
+					}
+				}
+			}
+		}
 
 		ul li {
 			a{
-				font-family: "Notethis";
-				font-size: 26px;
+				/*font-family: "Notethis";
+				font-size: 26px;*/
 
 				&:before{
 					/*content: "\232a";*/
@@ -52,7 +155,19 @@ body{
 				-moz-animation-iteration-count: 1;
 				-moz-animation-timing-function: linear;
 			}
- 
+ 			
+ 			.sprite-animation{
+			    width: 280px;
+				height: 380px;
+				margin: 0 auto;
+			    background-image: url("../img/deer-sprite.png");
+			    
+			    -webkit-animation: play .5s steps(7) infinite;
+			       -moz-animation: play .5s steps(7) infinite;
+			        -ms-animation: play .5s steps(7) infinite;
+			         -o-animation: play .5s steps(7) infinite;
+			            animation: play .5s steps(7) infinite;
+ 			}
 		}
 		.smiley-font{
 			font-family: TodayIFeel;
@@ -90,19 +205,30 @@ body{
 		}
 	}
 	.well{
-		overflow-y: auto;
-		overflow-x: hidden;
-		height: 500px;
+		min-height: 500px;
 	}
 	.specs li{
 		list-style: none;
 		padding-left: 0px;
+		vertical-align: top;
+		display: inline-block;
 
 		&:before{
 			content : '\2192';
-			color: #000;
+			color: #ff0000;
+			margin-left: -10px;
+		}
+
+		> span{
+			font-weight: bold;
+			color: #ff0000;
 		}
 	}
+}
+
+.ui-autocomplete { 
+	height: 130px;
+	overflow: hidden;
 }
 
 .clear{
@@ -131,34 +257,39 @@ body{
 	0% {
 		-webkit-transform: rotate(-5deg);
 	}
-	10% {
+/*	10% {
 		-webkit-transform: rotate(5deg);
 	}
 	20% {
 		-webkit-transform: rotate(-5deg);
-	}
+	}*/
 	30% {
 		-webkit-transform: rotate(5deg);
 	}
-	40% {
+	/*40% {
 		-webkit-transform: rotate(-5deg);
 	}
 	50% {
 		-webkit-transform: rotate(5deg);
-	}
+	}*/
 	60% {
 		-webkit-transform: rotate(-5deg);
 	}
-	70% {
+	/*70% {
 		-webkit-transform: rotate(5deg);
 	}
 	80% {
 		-webkit-transform: rotate(-5deg);
-	}
+	}*/
 	90% {
 		-webkit-transform: rotate(5deg);
 	}
 	100% {
 		-webkit-transform: rotate(-5deg);
 	}
+}
+
+@-webkit-keyframes play {
+   from { background-position:    0px; }
+     to { background-position: -1956px; }
 }

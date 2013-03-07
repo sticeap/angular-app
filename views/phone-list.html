@@ -1,27 +1,22 @@
-<ul class="nav nav-tabs">
-    <li>
-        <a href="#home">Home</a>
-    </li>
-    <li class="active">
-        <a href="#phones">Phones</a>
-    </li>
-    <li>
-        <a href="#about">About</a>
-    </li>
-</ul>
-<div class="well well-small">
-    Search: <input ng-model="query"><br/>
-    Sort by:
-    <select ng-model="orderProp">
-        <option value="name">Alphabetical</option>
-        <option value="age">Newest</option>
-    </select>
-    <ul class="phones">
-        <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="thumbnail">
-            <a href="#/phones/{{phone.id}}">{{phone.name}}</a><br/>
-            <a href="#/phones/{{phone.id}}" class="thumb pull-left"><img ng-src="{{phone.imageUrl}}" width="100px"></a>
-            <div class="pull-left">{{phone.snippet}}</div>
-            <div class="clearfix"></div>
-        </li>
-    </ul>
+<div ng-include src="header.url"></div>
+<div id="content">
+    <div class="content-wrapper">
+        <div class="well well-small">
+            Search: <input ng-model="query"><br/>
+            Sort by:
+            <select ng-model="orderProp">
+                <option value="name">Alphabetical</option>
+                <option value="age">Newest</option>
+            </select>
+            <ul class="phones">
+                <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="thumbnail">
+                    <a href="#/phones/{{phone.id}}">{{phone.name}}</a><br/>
+                    <a href="#/phones/{{phone.id}}" class="thumb pull-left"><img ng-src="{{phone.imageUrl}}" width="100px"></a>
+                    <div class="pull-left">{{phone.snippet}}</div>
+                    <div class="clearfix"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
+<div ng-include src="footer.url"></div>

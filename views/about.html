@@ -1,21 +1,19 @@
-<ul class="nav nav-tabs">
-    <li>
-        <a href="#home">Home</a>
-    </li>
-    <li>
-        <a href="#phones">Phones</a>
-    </li>
-    <li class="active">
-        <a href="#about">About</a>
-    </li>
-</ul>
-<div class="well well-small">
-    <div id="about">
-    	<div class="progress progress-striped active">
-    		<div class="bar"></div>
-    	</div>
-    	<div class="smiley">
-    		<div class="smiley-font">e</div>
-    	</div>
+<div ng-include src="header.url"></div>
+<div id="content">
+    <div class="content-wrapper">
+        <div class="well well-small">
+            <div id="about">
+            	<div class="progress progress-striped active" style="display: none;">
+            		<div class="bar"></div>
+            	</div>
+            	<div class="smiley" style="display: none;">
+            		<div class="smiley-font"><!-- e --></div>
+            	</div>
+                <div class="sprite-animation">
+
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+<div ng-include src="footer.url"></div>
