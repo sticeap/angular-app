@@ -7,13 +7,30 @@
             </blockquote>
             <div class="input-append" ng-init="initSocket();">
                 <input type="text" class="span2" ng-model="socket.text">
-                <button type="submit" class="btn" ng-click="socket.send();"><span class="icon-arrow-right"></span> Send</button>
-                <button type="submit" class="btn btn-primary" ng-click="socket.getContacts();"><span class="icon-arrow-down"></span> Get Contacts</button>
+                <button type="button" class="btn" ng-click="socket.send();"><span class="icon-arrow-right"></span> Send</button>
+                <button type="button" class="btn" ng-click="socket.getContacts();"><span class="icon-arrow-down"></span> Get Contacts</button>
+                <button type="button" class="btn" ng-click="socket.sendSms();"><span class="icon-arrow-right"></span> Send SMS</button>
+                <button type="button" class="btn btn-danger" ng-class="{'btn-success' : socketState == 1}"><span class="icon-refresh animation-rotate-icon" ng-class="{'paused' : socketState != 1}"></span></button>
             </div>
             <form class="form-search">
                 <div class="input-append">
                     <input type="text" auto-complete ui-items="contacts" class="span2 search-query">
                     <button type="submit" class="btn"><span class="icon-search"></span></button>
+                </div>
+            </form>
+            <form class="form-horizontal">
+                <div class="control-group">
+                    <div class="control-label">
+                        <input type="text" id="number" auto-complete ui-items="contacts" placeholder="number">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="control-label">
+                        <textarea rows="3" placeholder="text" ng-model="textSms"></textarea>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <button type="submit" ng-click="socket.sendSms();" class="btn">Send SMS</button>
                 </div>
             </form>
             <pre>

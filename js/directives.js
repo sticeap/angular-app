@@ -21,8 +21,7 @@ angular.module('appDirectives', [])
                     response(result);
                 },
                 select: function(event, ui) {
-                	console.log(ui.item);
-                	console.log(iElement);
+                    scope.selectedContact = ui;
                 }
             });
 	    };

@@ -30,24 +30,60 @@ app.controller('HomeCtrl', ['$scope', '$window', '$timeout', 'socket', function(
 		.on('receiveSms', function(response){
 			console.log(response);
 		})
+		.on('sendSms', function(response){
+			alert(response.response);
+			console.log(response);
+		})
+		.on('smsStatus', function(response){
+			var status = JSON.parse(response.response);
+			console.log(status);
+		})
+		.on('smsDelivery', function(response){
+			var delivery = JSON.parse(response.response);
+			console.log(delivery);
+		});
+
+	$scope.socketState = 0;
 
 	$scope.socket = {
 		getContacts : function(){
-			//socket.send(this.text);
 			var data = {
 				type : 'getContacts',
 				callback : function(){
-					console.log("now run callback");
+					
 				},
 				message : "getContacts"
 			}
 			socket.send(data);
+		},
+		sendSms : function(){
+			var data = {
+				type : 'sendSms',
+				callback : function(){
+					console.log("now run callback sms");
+				},
+				message : "sendSms",
+				data : JSON.stringify({number:'0749785884', id : '123675217635762', message : $scope.textSms })
+			}
+			socket.send(data);
+		},
+		checkState : function(){
+			$scope.socketState = socket.readyState;
+
+			$timeout(function(){
+				$scope.socket.checkState();
+			},1000, true);
 		},
 		contacts : function(){
 			$scope.contacts = socket.contacts();
 		},
 		text : "getContacts"
 	};
+
+	$scope.socket.checkState();
+	$scope.selectedContact = {};
+	$scope.textSms = "";
+	//$scope.socket.getContacts();
 
 	var $ = angular.element;
 

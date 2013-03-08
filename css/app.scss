@@ -79,7 +79,6 @@ body{
 				width: $widthContent;
 				margin:0 auto;
 				margin-top: 20px;
-
 			}
 		}
 
@@ -233,6 +232,36 @@ body{
 
 .clear{
 	clear: both;
+}
+
+.animation-rotate-icon{
+	-webkit-animation-duration: 1s;
+	-webkit-animation-name: rotate;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-play-state: running;
+
+	&.paused{
+		-webkit-animation-play-state: paused;
+	}
+}
+
+@-webkit-keyframes rotate {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+
+	40% {
+		-webkit-transform: rotate(90deg);
+	}
+
+	80% {
+		-webkit-transform: rotate(90deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(180deg);
+	}
 }
 
 @-webkit-keyframes slidein {

@@ -77,58 +77,58 @@ body #website #content .content-wrapper {
   margin: 0 auto;
   margin-top: 20px;
 }
-/* line 86, app.scss */
+/* line 85, app.scss */
 body #website #footer {
   /*background: rgba(95,72,99, 0.1);*/
   background: rgba(0, 0, 0, 0.1);
   box-shadow: 0px 0px 5px;
 }
-/* line 91, app.scss */
+/* line 90, app.scss */
 body #website #footer .content-wrapper {
   position: relative;
   width: 900px;
   margin: 0 auto;
   min-height: 100px;
 }
-/* line 97, app.scss */
+/* line 96, app.scss */
 body #website #footer .content-wrapper .footer-col {
   width: 200px;
   float: left;
   padding-top: 10px;
   margin-left: 80px;
 }
-/* line 107, app.scss */
+/* line 106, app.scss */
 body #website #footer .content-wrapper .footer-col ul li a:hover {
   background: none;
 }
-/* line 111, app.scss */
+/* line 110, app.scss */
 body #website #footer .content-wrapper .footer-col ul li.title {
   font-size: 16px;
   padding-bottom: 5px;
   color: #333333;
 }
-/* line 123, app.scss */
+/* line 122, app.scss */
 body #website ul li a {
   /*font-family: "Notethis";
   font-size: 26px;*/
 }
-/* line 127, app.scss */
+/* line 126, app.scss */
 body #website ul li a:before {
   /*content: "\232a";*/
   color: #000;
   margin-right: 10px;
 }
-/* line 134, app.scss */
+/* line 133, app.scss */
 body #website #about {
   text-align: center;
   margin-top: 80px;
 }
-/* line 138, app.scss */
+/* line 137, app.scss */
 body #website #about .smiley {
   height: 140px;
   line-height: 140px;
 }
-/* line 143, app.scss */
+/* line 142, app.scss */
 body #website #about .progress.active .bar {
   width: 100%;
   -webkit-animation-duration: 10s;
@@ -142,7 +142,7 @@ body #website #about .progress.active .bar {
   -moz-animation-iteration-count: 1;
   -moz-animation-timing-function: linear;
 }
-/* line 159, app.scss */
+/* line 158, app.scss */
 body #website #about .sprite-animation {
   width: 280px;
   height: 380px;
@@ -154,19 +154,19 @@ body #website #about .sprite-animation {
   -o-animation: play 0.5s steps(7) infinite;
   animation: play 0.5s steps(7) infinite;
 }
-/* line 172, app.scss */
+/* line 171, app.scss */
 body #website .smiley-font {
   font-family: TodayIFeel;
   font-size: 120px;
   color: #000;
 }
-/* line 177, app.scss */
+/* line 176, app.scss */
 body #website .tags {
   margin-top: 0px;
   width: 100%;
   clear: both;
 }
-/* line 182, app.scss */
+/* line 181, app.scss */
 body #website .tags .tag {
   position: relative;
   width: 100px;
@@ -183,71 +183,106 @@ body #website .tags .tag {
   -moz-transition: background 0.5s ease-in;
   cursor: pointer;
 }
-/* line 198, app.scss */
+/* line 197, app.scss */
 body #website .tags .tag:hover {
   background: rgba(0, 0, 0, 0.3);
   -webkit-transition: background 0.2s ease-in-out;
   -webkit-animation-duration: .4s;
   -webkit-animation-name: hovered;
 }
-/* line 207, app.scss */
+/* line 206, app.scss */
 body .well {
   min-height: 500px;
 }
-/* line 210, app.scss */
+/* line 209, app.scss */
 body .specs li {
   list-style: none;
   padding-left: 0px;
   vertical-align: top;
   display: inline-block;
 }
-/* line 216, app.scss */
+/* line 215, app.scss */
 body .specs li:before {
   content: '\2192';
   color: #ff0000;
   margin-left: -10px;
 }
-/* line 222, app.scss */
+/* line 221, app.scss */
 body .specs li > span {
   font-weight: bold;
   color: #ff0000;
 }
 
-/* line 229, app.scss */
+/* line 228, app.scss */
 .ui-autocomplete {
   height: 130px;
   overflow: hidden;
 }
 
-/* line 234, app.scss */
+/* line 233, app.scss */
 .clear {
   clear: both;
 }
 
+/* line 237, app.scss */
+.animation-rotate-icon {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-name: rotate;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-play-state: running;
+}
+/* line 244, app.scss */
+.animation-rotate-icon.paused {
+  -webkit-animation-play-state: paused;
+}
+
+@-webkit-keyframes rotate {
+  /* line 250, app.scss */
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  /* line 254, app.scss */
+  40% {
+    -webkit-transform: rotate(90deg);
+  }
+
+  /* line 258, app.scss */
+  80% {
+    -webkit-transform: rotate(90deg);
+  }
+
+  /* line 262, app.scss */
+  100% {
+    -webkit-transform: rotate(180deg);
+  }
+}
+
 @-webkit-keyframes slidein {
-  /* line 239, app.scss */
+  /* line 268, app.scss */
   0% {
     width: 0%;
   }
 
-  /* line 243, app.scss */
+  /* line 272, app.scss */
   30% {
     width: 40%;
   }
 
-  /* line 247, app.scss */
+  /* line 276, app.scss */
   40% {
     width: 40%;
   }
 
-  /* line 251, app.scss */
+  /* line 280, app.scss */
   100% {
     width: 100%;
   }
 }
 
 @-webkit-keyframes hovered {
-  /* line 257, app.scss */
+  /* line 286, app.scss */
   0% {
     -webkit-transform: rotate(-5deg);
   }
@@ -258,7 +293,7 @@ body .specs li > span {
   	20% {
   		-webkit-transform: rotate(-5deg);
   	}*/
-  /* line 266, app.scss */
+  /* line 295, app.scss */
   30% {
     -webkit-transform: rotate(5deg);
   }
@@ -269,7 +304,7 @@ body .specs li > span {
   50% {
   	-webkit-transform: rotate(5deg);
   }*/
-  /* line 275, app.scss */
+  /* line 304, app.scss */
   60% {
     -webkit-transform: rotate(-5deg);
   }
@@ -280,24 +315,24 @@ body .specs li > span {
   80% {
   	-webkit-transform: rotate(-5deg);
   }*/
-  /* line 284, app.scss */
+  /* line 313, app.scss */
   90% {
     -webkit-transform: rotate(5deg);
   }
 
-  /* line 287, app.scss */
+  /* line 316, app.scss */
   100% {
     -webkit-transform: rotate(-5deg);
   }
 }
 
 @-webkit-keyframes play {
-  /* line 293, app.scss */
+  /* line 322, app.scss */
   from {
     background-position: 0px;
   }
 
-  /* line 294, app.scss */
+  /* line 323, app.scss */
   to {
     background-position: -1956px;
   }
